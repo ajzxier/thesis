@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports Tournament Scheduler</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dynamic Scheduling Optimization for Esports Tournaments</h1>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="setup">Tournament Setup</button>
+                <button class="tab-button" data-tab="teams">Teams</button>
+                <button class="tab-button" data-tab="schedule" disabled>Schedule</button>
+                <button class="tab-button" data-tab="disruptions" disabled>Disruptions</button>
+                <button class="tab-button" data-tab="adjusted" disabled>Adjusted Schedule</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Tournament Setup Tab -->
+                <div class="tab-pane active" id="setup">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Tournament Setup</h2>
+                            <p>Configure the parameters for your esports tournament</p>
+                        </div>
+                        <div class="card-body">
+                            <form id="tournament-form">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="format">Tournament Format</label>
+                                        <select id="format" name="format" required>
+                                            <option value="single-elimination">Single Elimination</option>
+                                            <option value="double-elimination">Double Elimination</option>
+                                            <option value="semifinals">Semifinals</option>
+                                            <option value="finals">Finals</option>
+                                        </select>
+                                        <small>The tournament bracket format</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="matchFormat">Match Format</label>
+                                        <select id="matchFormat" name="matchFormat" required>
+                                            <option value="bo1">Best of 1</option>
+                                            <option value="bo3">Best of 3</option>
+                                            <option value="bo5">Best of 5</option>
+                                            <option value="bo7">Best of 7</option>
+                                        </select>
+                                        <small>Number of games played per match</small>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="switch-label">
+                                                <span>Mobile Legends</span>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="enableMobileLegends" name="enableMobileLegends" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <small>Enable Mobile Legends tournament</small>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="switch-label">
+                                                <span>Valorant</span>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="enableValorant" name="enableValorant" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                                <small>Enable Valorant tournament</small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="mlTimeSlot">ML Time Slot</label>
+                                            <select id="mlTimeSlot" name="mlTimeSlot" required>
+                                                <option value="morning">Morning (Before Noon)</option>
+                                                <option value="afternoon">Afternoon (After Noon)</option>
+                                                <option value="wholeday">Whole Day (Venue Hours)</option>
+                                            </select>
+                                            <small>When Mobile Legends matches will be scheduled</small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="valTimeSlot">Valorant Time Slot</label>
+                                            <select id="valTimeSlot" name="valTimeSlot" required>
+                                                <option value="afternoon">Afternoon (After Noon)</option>
+                                                <option value="morning">Morning (Before Noon)</option>
+                                                <option value="wholeday">Whole Day (Venue Hours)</option>
+                                            </select>
+                                            <small>When Valorant matches will be scheduled</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="mlTeams">Mobile Legends Teams</label>
+                                            <input type="number" id="mlTeams" name="mlTeams" value="4" min="2" max="16" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="valTeams">Valorant Teams</label>
+                                            <input type="number" id="valTeams" name="valTeams" value="4" min="2" max="16" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="mlDurationMin">ML Min Duration (min)</label>
+                                            <input type="number" id="mlDurationMin" name="mlDurationMin" value="15" min="5" max="60" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mlDurationMax">ML Max Duration (min)</label>
+                                            <input type="number" id="mlDurationMax" name="mlDurationMax" value="25" min="5" max="60" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="valDurationMin">Valorant Min Duration (min)</label>
+                                            <input type="number" id="valDurationMin" name="valDurationMin" value="30" min="5" max="120" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="valDurationMax">Valorant Max Duration (min)</label>
+                                            <input type="number" id="valDurationMax" name="valDurationMax" value="50" min="5" max="120" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="venueStart">Venue Start Time</label>
+                                            <input type="time" id="venueStart" name="venueStart" value="09:00" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="venueEnd">Venue End Time</label>
+                                            <input type="time" id="venueEnd" name="venueEnd" value="20:00" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="restPeriod">Rest Period (minutes)</label>
+                                        <input type="number" id="restPeriod" name="restPeriod" value="30" min="5" max="60" required>
+                                        <small>Minimum rest time between matches for teams</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="maxMatchesPerDay">Max Matches Per Day</label>
+                                        <input type="number" id="maxMatchesPerDay" name="maxMatchesPerDay" value="3" min="1" max="10" required>
+                                        <small>Maximum number of matches a team can play in one day</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Continue to Team Setup</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teams Tab -->
+                <div class="tab-pane" id="teams">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Team Management</h2>
+                            <p>Add teams for your tournament</p>
+                        </div>
+                        <div class="card-body">
+                            <form id="team-form">
+                                <div class="form-row">
+                                    <div class="form-group" style="flex: 2">
+                                        <label for="teamName">Team Name</label>
+                                        <input type="text" id="teamName" name="teamName" placeholder="Enter team name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="gameType">Game</label>
+                                        <select id="gameType" name="gameType" required>
+                                            <option value="ML">Mobile Legends</option>
+                                            <option value="Val">Valorant</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn">Add Team</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card mt-20">
+                        <div class="card-header">
+                            <h2>Team List</h2>
+                            <p id="team-counts">Mobile Legends: 0/4 teams | Valorant: 0/4 teams</p>
+                        </div>
+                        <div class="card-body">
+                            <div id="team-table-container">
+                                <table id="team-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Team Name</th>
+                                            <th>Game</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="team-table-body">
+                                        <!-- Teams will be added here dynamically -->
+                                    </tbody>
+                                </table>
+                                <div id="no-teams-message" class="empty-message">
+                                    No teams added yet. Add teams using the form above.
+                                </div>
+                            </div>
+
+                            <div class="form-actions right mt-20">
+                                <button id="continue-to-schedule" class="btn btn-primary" disabled>Continue to Schedule</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Tab -->
+                <div class="tab-pane" id="schedule">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="header-with-actions">
+                                <h2>Tournament Schedule</h2>
+                                <button id="generate-schedule" class="btn btn-primary">Generate Schedule</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="schedule-container">
+                                <div id="schedule-view-controls" class="view-controls">
+                                    <button class="view-button active" data-view="table">Table View</button>
+                                    <button class="view-button" data-view="timeline">Timeline View</button>
+                                </div>
+                                
+                                <div id="schedule-table-view" class="view-pane active">
+                                    <!-- Schedule rounds will be added here dynamically -->
+                                </div>
+                                
+                                <div id="schedule-timeline-view" class="view-pane">
+                                    <div class="timeline">
+                                        <!-- Timeline items will be added here dynamically -->
+                                    </div>
+                                </div>
+                                
+                                <div id="no-schedule-message" class="empty-message">
+                                    <div class="icon-placeholder">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    </div>
+                                    <h3>No Schedule Generated</h3>
+                                    <p>Click the "Generate Schedule" button to create a tournament schedule.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disruptions Tab -->
+                <div class="tab-pane" id="disruptions">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Manage Disruptions</h2>
+                            <p>Add tournament disruptions to test dynamic rescheduling</p>
+                        </div>
+                        <div class="card-body">
+                            <form id="disruption-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="matchId">Match</label>
+                                        <select id="matchId" name="matchId" required>
+                                            <option value="">Select match</option>
+                                            <!-- Matches will be added here dynamically -->
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="disruptionType">Disruption Type</label>
+                                        <select id="disruptionType" name="disruptionType" required>
+                                            <option value="extended_duration">Extended Duration</option>
+                                            <option value="late_arrival">Late Team Arrival</option>
+                                            <option value="early_finish">Early Finish</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="extraMinutes">Extra Minutes</label>
+                                    <input type="number" id="extraMinutes" name="extraMinutes" value="15" min="1" max="60" required>
+                                    <small id="extraMinutesHelp">How many minutes longer the match ran than expected</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">Description (Optional)</label>
+                                    <textarea id="description" name="description" placeholder="Match ran longer than expected"></textarea>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn">Add Disruption</button>
+                                </div>
+                            </form>
+
+                            <div id="no-schedule-for-disruptions" class="empty-message">
+                                <div class="icon-placeholder">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                </div>
+                                <h3>No Schedule Available</h3>
+                                <p>You need to generate a schedule before you can add disruptions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-20">
+                        <div class="card-header">
+                            <h2>Disruption List</h2>
+                            <p id="disruption-count">0 disruptions added</p>
+                        </div>
+                        <div class="card-body">
+                            <div id="disruption-table-container">
+                                <table id="disruption-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Match</th>
+                                            <th>Type</th>
+                                            <th>Extra Minutes</th>
+                                            <th>Description</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="disruption-table-body">
+                                        <!-- Disruptions will be added here dynamically -->
+                                    </tbody>
+                                </table>
+                                <div id="no-disruptions-message" class="empty-message">
+                                    No disruptions added yet. Add disruptions using the form above.
+                                </div>
+                            </div>
+
+                            <div class="form-actions right mt-20">
+                                <button id="adjust-schedule" class="btn btn-primary" disabled>Adjust Schedule</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adjusted Schedule Tab -->
+                <div class="tab-pane" id="adjusted">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Adjusted Schedule</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="metrics-container" class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-header">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        <span>Idle Time</span>
+                                    </div>
+                                    <div class="metric-content">
+                                        <p>Original: <span id="original-idle-time">45 min</span></p>
+                                        <p>Adjusted: <span id="adjusted-idle-time">30 min</span></p>
+                                        <p class="improvement">Improvement: <span id="idle-time-diff">15 min</span></p>
+                                    </div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-header">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                        <span>Disruption Score</span>
+                                    </div>
+                                    <div class="metric-content">
+                                        <p id="disruption-score">25.0% of matches were rescheduled</p>
+                                    </div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-header">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        <span>Total Duration</span>
+                                    </div>
+                                    <div class="metric-content">
+                                        <p>Original: <span id="original-duration">6h 30m</span></p>
+                                        <p>Adjusted: <span id="adjusted-duration">6h 45m</span></p>
+                                        <p class="warning">Increase: <span id="duration-diff">15 min</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="adjusted-schedule-container">
+                                <div id="adjusted-view-controls" class="view-controls">
+                                    <button class="view-button active" data-view="table">Table View</button>
+                                    <button class="view-button" data-view="timeline">Timeline View</button>
+                                </div>
+                                
+                                <div id="adjusted-table-view" class="view-pane active">
+                                    <!-- Adjusted schedule rounds will be added here dynamically -->
+                                </div>
+                                
+                                <div id="adjusted-timeline-view" class="view-pane">
+                                    <div class="timeline">
+                                        <!-- Timeline items will be added here dynamically -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="no-adjusted-schedule-message" class="empty-message">
+                                <div class="icon-placeholder">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <h3>No Adjusted Schedule</h3>
+                                <p>Add disruptions and click "Adjust Schedule" to see the optimized schedule.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-container" class="error-container hidden">
+            <div class="error-message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <div>
+                    <h3>Error</h3>
+                    <p id="error-text"></p>
+                </div>
+                <button id="close-error" class="close-button">&times;</button>
+            </div>
+        </div>
+
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="spinner"></div>
+            <p id="loading-text">Loading...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Esports Tournament Scheduler</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

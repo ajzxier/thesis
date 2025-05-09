@@ -1,0 +1,725 @@
+2025-05-07 04:22:29,250 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 04:22:29,250 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 04:22:29,253 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:22:29,846 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:22:29,846 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:23:01,455 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 04:23:01] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-07 04:23:02,775 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 04:23:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-07 04:23:03,044 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 04:23:03] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-07 04:23:08,037 - werkzeug - INFO - 172.16.21.127 - - [07/May/2025 04:23:08] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-07 04:23:09,278 - werkzeug - INFO - 172.16.21.127 - - [07/May/2025 04:23:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-07 04:23:52,502 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 04:23:52,502 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 04:23:52,502 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:23:53,079 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:23:53,079 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:24:21,337 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 04:24:21] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-07 04:24:21,670 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 04:24:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-07 04:30:02,783 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 04:30:02,880 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:03,252 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 04:30:03,369 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:03,564 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:03,568 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:30:04,103 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:04,110 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:30:23,256 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:30:23,363 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:23,801 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:30:24,014 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:24,192 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:24,192 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:30:24,721 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:24,727 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:30:33,595 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:30:33,687 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:34,097 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:30:34,198 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:34,449 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:34,453 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:30:34,946 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:34,951 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:30:58,638 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 04:30:58,638 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 04:30:58,638 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:30:59,261 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:30:59,261 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:36:53,102 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:36:53,185 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:36:53,373 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:36:53,492 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:36:53,873 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:36:53,970 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:36:53,971 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:36:54,017 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:36:54,235 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:36:54,235 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:36:54,657 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:36:54,665 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:10,589 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:37:10,670 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:10,800 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:37:10,903 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:11,216 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:37:11,318 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:11,325 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:11,327 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:11,568 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:11,575 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:11,964 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:11,964 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:24,410 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:37:24,521 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:24,825 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:37:24,908 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:25,082 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 04:37:25,192 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:25,194 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:25,196 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:25,579 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:25,579 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:25,834 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:25,839 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:37:58,475 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 04:37:58,476 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 04:37:58,477 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:37:59,061 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:37:59,069 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:03,732 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:52:03,744 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:52:03,748 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:52:03,749 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 04:52:03,941 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:03,946 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:03,958 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:03,959 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:04,840 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:52:04,841 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:52:04,847 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:04,848 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:04,853 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:52:04,860 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:29,099 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 04:52:29,107 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 04:52:29,111 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 04:52:29,112 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 04:52:29,327 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:29,343 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:29,351 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:29,354 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:52:30,313 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:52:30,316 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:30,316 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:30,327 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:52:30,335 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:52:30,337 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:52:30,343 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 04:53:19,478 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 04:53:19,478 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 04:53:19,478 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 04:53:20,037 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 04:53:20,037 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:14:36,975 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 05:14:37,149 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:14:37,236 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 05:14:37,242 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 05:14:37,249 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 05:14:37,252 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\models.py', reloading
+2025-05-07 05:14:37,520 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:14:37,526 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:14:37,531 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:14:37,537 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:14:38,371 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:14:38,377 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:14:38,510 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:14:38,512 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:14:38,515 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:14:38,517 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:14:38,518 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:14:38,518 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:14:38,525 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:14:38,525 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:15:40,856 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:15:40,986 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:15:41,240 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:15:41,345 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:15:41,441 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:15:41,544 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:15:41,544 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:15:41,579 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:15:41,700 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:15:41,700 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:15:41,816 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:15:41,821 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:15:42,184 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:15:42,184 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:15:42,387 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:15:42,387 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:15:42,478 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:15:42,485 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:15:42,496 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:15:42,500 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:00,844 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:00,932 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:01,060 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:01,160 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:01,193 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:01,193 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:01,331 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:01,332 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:01,575 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:01,717 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:01,723 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:01,732 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:01,996 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:01,996 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:02,114 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:02,114 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:02,130 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:02,136 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:02,453 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:02,457 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:12,411 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:12,521 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:12,590 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:12,590 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:12,710 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:12,710 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:12,849 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:12,973 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:13,214 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 05:16:13,351 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:13,397 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:13,403 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:13,539 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:13,539 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:13,539 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:13,539 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:13,781 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:13,781 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:14,054 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:14,059 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:35,157 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 05:16:35,230 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:35,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 05:16:35,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 05:16:35,534 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 05:16:35,611 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:35,625 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:35,687 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:35,853 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\tournament.py', reloading
+2025-05-07 05:16:35,995 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:16:36,013 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:36,019 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:36,408 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:36,409 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:36,409 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:36,417 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:36,451 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:36,463 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:16:36,687 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:16:36,692 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:19:29,474 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 05:19:29,474 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 05:19:29,474 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:19:30,111 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:19:30,113 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:36:46,611 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 05:36:46,612 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 05:36:46,614 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:36:47,254 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:36:47,260 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:42,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:42,105 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:42,311 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:42,348 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:42,374 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:42,591 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:42,850 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:42,960 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:42,990 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:42,993 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:43,101 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:43,254 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:43,292 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:43,316 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:43,589 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:43,589 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:43,596 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:43,596 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:43,842 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:43,850 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:44,235 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:44,241 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:44,322 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:44,329 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:44,353 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:44,356 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:44,363 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:44,364 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:58,426 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:58,428 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:58,569 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:58,641 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:58,641 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:58,759 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:58,935 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:59,046 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:59,066 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:59,145 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:59,172 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:50:59,289 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:59,368 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:59,378 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:50:59,637 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:59,640 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:59,645 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:59,649 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:50:59,754 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:50:59,759 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:00,037 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:00,043 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:00,132 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:00,148 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:00,204 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:00,209 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:00,217 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:00,218 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:26,790 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:26,805 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:26,806 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:26,957 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:26,970 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:26,981 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:27,003 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:27,149 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:27,158 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:27,270 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:27,275 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:51:27,353 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:27,457 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:27,457 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:51:28,191 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,197 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,200 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:28,203 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,205 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:28,209 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:28,401 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,408 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:28,519 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,524 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:28,615 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,619 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:51:28,676 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:51:28,682 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:56:37,105 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,148 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,156 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,174 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,183 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,340 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,346 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:56:37,384 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:56:37,429 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:56:37,448 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:56:37,462 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:56:37,556 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:56:37,566 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:56:38,596 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:56:38,599 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:56:38,604 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:56:38,607 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:56:38,608 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:56:38,617 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:56:38,625 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:56:38,635 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:56:38,879 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:56:38,883 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:56:38,888 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:56:38,890 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:08,324 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:08,325 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:08,327 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:08,330 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:08,532 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:08,547 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:08,657 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:08,662 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:08,663 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:08,668 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:08,818 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:08,832 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:09,724 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:09,724 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:09,728 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:09,728 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:09,728 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:09,733 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:09,733 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:09,733 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:09,817 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:09,823 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:09,837 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:09,843 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:31,898 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:31,928 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:31,929 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:31,930 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:31,938 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:32,190 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:32,231 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:32,233 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:32,237 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:32,237 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:32,849 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 05:57:33,025 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 05:57:33,154 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:33,154 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:33,154 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:33,155 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:33,155 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:33,160 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:33,160 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:33,161 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:33,161 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:33,161 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 05:57:33,723 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 05:57:33,723 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:04:05,747 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 06:04:05,807 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 06:04:05,810 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 06:04:05,818 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 06:04:05,997 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 06:04:06,164 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:04:06,227 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:04:06,247 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:04:06,253 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:04:06,405 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:04:06,530 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 06:04:06,782 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:04:07,750 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:04:07,761 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:04:07,778 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:04:07,778 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:04:07,788 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:04:07,788 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:04:07,846 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:04:07,853 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:04:07,935 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:04:07,943 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:04:08,169 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:04:08,174 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:08:59,943 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 06:08:59,943 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 06:08:59,950 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:09:00,475 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:09:00,475 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:11:25,272 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:11:25,383 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:11:25,390 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:11:25,418 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:11:25,521 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:11:25,544 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:11:26,146 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:11:26,155 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:11:26,243 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:11:26,243 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:11:26,243 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:11:26,257 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:17:41,979 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:17:42,080 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:17:42,167 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:17:42,168 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:17:42,311 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:17:42,312 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:17:42,844 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:17:42,844 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:17:43,000 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:17:43,000 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:17:43,000 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:18:30,507 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:18:30,507 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:18:30,608 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:18:30,608 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:18:31,061 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:18:31,166 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:18:31,246 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:18:31,246 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:18:31,246 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:18:31,246 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:18:31,765 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:18:31,769 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:12,174 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:12,276 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:12,283 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:12,293 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:12,407 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:12,418 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:12,966 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:12,971 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:13,049 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:13,053 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:13,054 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:23,419 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:23,496 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:23,518 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:23,526 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:23,674 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:23,684 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:24,300 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:24,305 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:24,407 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:24,411 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:24,411 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:24,415 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:34,749 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:34,832 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:34,901 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:34,902 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:23:35,005 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:35,005 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:23:35,497 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:35,497 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:35,650 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:23:35,656 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:23:35,656 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:31:02,360 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:31:02,362 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:31:02,478 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:31:02,478 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:31:02,478 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:31:03,122 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:31:03,123 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:31:03,123 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:31:03,126 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:31:03,126 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:31:03,126 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:36:38,752 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:36:38,752 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:36:38,861 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:36:38,877 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:36:39,439 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:36:39,468 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:36:39,468 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:36:39,475 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:36:39,538 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:36:40,095 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:36:40,099 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:42:51,293 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:42:51,374 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:42:51,927 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:42:51,935 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:42:52,066 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:42:52,101 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:42:52,105 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:42:52,678 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:42:52,682 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:50:34,909 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:50:34,909 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:50:35,044 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:50:35,053 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:50:35,659 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:50:35,663 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:50:35,663 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 06:50:35,908 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler_api.py', reloading
+2025-05-07 06:50:35,988 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 06:50:36,569 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 06:50:36,573 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:18:40,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:18:40,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:18:40,726 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:18:40,878 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:18:40,895 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:18:40,895 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:18:41,527 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:18:41,527 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:18:41,527 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:18:41,527 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:18:41,527 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:19:32,438 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 07:19:32,438 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 07:19:32,444 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:19:33,013 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:19:33,013 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:27,782 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:27,782 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:27,898 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:27,901 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:28,030 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:28,109 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:28,198 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:28,321 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:28,581 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:28,585 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:28,585 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:28,774 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:28,777 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:28,917 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:28,918 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:52,578 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:52,578 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:52,624 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:52,751 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:52,757 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:52,796 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:52,796 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:21:52,918 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:21:53,563 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:53,571 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:53,571 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:53,576 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:53,577 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:53,583 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:21:53,678 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:21:53,684 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:22:27,745 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:22:27,815 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:22:27,907 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:22:27,941 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:22:27,941 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 07:22:28,024 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:22:28,079 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:22:28,080 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:22:28,500 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:22:28,500 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:22:28,643 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:22:28,650 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:22:28,696 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:22:28,700 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:22:28,700 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:23:25,763 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 07:23:25,763 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 07:23:25,763 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:23:26,389 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:23:26,394 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 07:24:00,126 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 07:24:00,126 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 07:24:00,128 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 07:24:00,712 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 07:24:00,712 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 11:10:07,132 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 11:10:07,132 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 11:10:07,135 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 11:10:07,749 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 11:10:07,749 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:01:13,593 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.21.127:5000
+2025-05-07 12:01:13,593 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 12:01:13,595 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:01:14,737 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:01:14,737 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:04:28,127 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,173 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,176 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,183 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,288 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,301 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,517 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,555 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:04:28,600 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:04:28,614 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:04:28,698 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:04:28,989 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:04:31,811 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:04:31,824 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:04:31,844 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:04:31,856 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:04:31,943 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:04:31,955 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:04:32,076 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:04:32,087 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:05:15,263 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:05:15,277 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:05:15,435 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:05:15,464 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:05:15,758 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:05:15,869 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:05:15,916 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:05:16,177 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:05:18,083 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:05:18,090 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:05:18,090 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:05:18,090 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:05:18,470 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:05:18,480 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:05:18,535 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:05:18,542 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:06:49,470 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:06:49,473 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:06:49,703 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:06:49,705 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:06:49,905 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:06:49,909 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:06:50,153 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:06:50,157 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:06:52,338 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:06:52,338 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:06:52,349 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:06:52,354 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:06:52,551 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:06:52,553 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:06:52,583 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:06:52,585 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:25:27,761 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:25:27,933 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:25:28,068 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:25:28,276 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:25:28,359 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:25:28,377 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Acer\\esports-scheduler\\scheduler.py', reloading
+2025-05-07 12:25:28,610 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:25:28,762 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 12:25:31,125 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:25:31,130 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:25:31,306 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:25:31,321 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:25:31,464 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:25:31,474 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-07 12:25:31,483 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 12:25:31,491 - werkzeug - INFO -  * Debugger PIN: 694-092-352
+2025-05-09 17:24:48,586 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.17.210:5000
+2025-05-09 17:24:48,586 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-09 17:24:48,588 - werkzeug - INFO -  * Restarting with stat
+2025-05-09 17:24:49,141 - werkzeug - WARNING -  * Debugger is active!
+2025-05-09 17:24:49,141 - werkzeug - INFO -  * Debugger PIN: 694-092-352
