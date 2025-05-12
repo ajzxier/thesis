@@ -9,8 +9,8 @@ import networkx as nx
 import numpy as np
 from deap import base, creator, tools, algorithms
 
-from models import Match, Team, Schedule, Disruption
-from tournament import Tournament
+from backend.models.models import Match, Team, Schedule, Disruption
+from backend.models.tournament import Tournament
 
 class GraphColoringScheduler:
     """Scheduler using graph coloring algorithm for initial scheduling."""
@@ -906,8 +906,8 @@ class GeneticAlgorithmOptimizer:
         stats.register("max", np.max)
         
         # Parameters for the GA
-        crossover_prob = 0.8    # Higher crossover probability
-        mutation_prob = 0.3     # Higher mutation rate for better exploration
+        crossover_prob = 0.7    # Reduced crossover probability
+        mutation_prob = 0.3     # Kept mutation rate the same
         generations = 100       # More generations for better convergence
         
         # Define elitism - preserve the top 10% individuals

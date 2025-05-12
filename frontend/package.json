@@ -1,14 +1,13 @@
 {
-  "name": "esports-scheduler",
+  "name": "esports-scheduler-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run start\" \"npm run start:python\"",
-    "build": "next build",
-    "start": "node backend/api/server.js",
-    "start:python": "python -m backend.main",
-    "lint": "next lint",
-    "test:optimization": "run_optimization_test.bat"
+    "dev": "cd .. && concurrently \"npm run start\" \"npm run start:python\"",
+    "build": "cd .. && next build",
+    "start": "cd .. && node backend/api/server.js",
+    "start:python": "cd .. && python -m backend.main",
+    "lint": "cd .. && next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

@@ -5,9 +5,10 @@ from datetime import datetime, time, timedelta
 import logging
 import re
 
-from models import Match, Team, Schedule, Disruption
-from tournament import Tournament
-from scheduler import GraphColoringScheduler, GeneticAlgorithmOptimizer
+from backend.models.models import Match, Team, Schedule, Disruption, GameType
+from backend.models.tournament import Tournament
+from backend.schedulers.scheduler import GraphColoringScheduler, GeneticAlgorithmOptimizer
+from backend.utils.data_importer import import_data  # If this is used
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, 

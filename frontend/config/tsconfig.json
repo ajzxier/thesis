@@ -20,9 +20,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["../../frontend/*"],
+      "@components/*": ["../../frontend/components/*"],
+      "@styles/*": ["../../frontend/styles/*"],
+      "@utils/*": ["../../frontend/utils/*"],
+      "@hooks/*": ["../../frontend/hooks/*"],
+      "@config/*": ["../../frontend/config/*"]
+    },
+    "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["../../frontend/**/*.ts", "../../frontend/**/*.tsx", "../../next-env.d.ts"],
   "exclude": ["node_modules"]
 }

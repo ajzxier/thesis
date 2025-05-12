@@ -7,7 +7,7 @@ import random
 from typing import Dict, List, Tuple, Set
 import networkx as nx
 
-from models import GameType, Team, Match, Schedule
+from backend.models.models import GameType, Team, Match, Schedule
 
 class Tournament:
     """Represents an esports tournament with teams and matches."""

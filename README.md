@@ -1,54 +1,206 @@
 # Esports Tournament Scheduler
 
-A JavaScript-based web application for scheduling and managing esports tournaments with dynamic rescheduling capabilities.
+An application for scheduling and optimizing esports tournaments using graph coloring and genetic algorithms.
+
+## Project Structure
+
+The project is organized into two main parts:
+
+```
+esports-scheduler/
+├── backend/                # Python backend
+│   ├── api/                # API endpoints
+│   │   ├── scheduler_api.py  # FastAPI implementation
+│   │   └── server.js      # Express server for frontend
+│   ├── logs/               # Log files
+│   ├── models/             # Data models
+│   │   ├── models.py       # Core data models
+│   │   └── tournament.py   # Tournament model
+│   ├── schedulers/         # Scheduling algorithms
+│   │   └── scheduler.py    # Graph coloring and genetic algorithm
+│   ├── tests/              # Unit tests
+│   │   └── test_optimization.py  # Performance tests
+│   ├── utils/              # Utility functions
+│   │   └── data_importer.py  # Data import utilities
+│   ├── cli.py              # Command-line interface
+│   └── main.py             # Entry point
+│   
+├── frontend/               # Next.js frontend
+│   ├── components/         # React components
+│   ├── config/             # Frontend configuration
+│   │   ├── tailwind.config.ts
+│   │   ├── postcss.config.mjs
+│   │   ├── tsconfig.json
+│   │   └── components.json
+│   ├── hooks/              # React hooks
+│   ├── pages/              # Page components
+│   ├── public/             # Static assets
+│   ├── styles/             # CSS styles
+│   ├── utils/              # Frontend utilities
+│   ├── next-env.d.ts       # TypeScript declarations for Next.js
+│   └── package.json        # Frontend-specific dependencies
+│
+├── package.json            # Main project dependencies
+├── package-lock.json       # Dependency lock file
+├── tsconfig.json           # Root TypeScript configuration
+├── next.config.mjs         # Next.js configuration
+└── requirements.txt        # Python dependencies
+```
 
 ## Features
 
-- Tournament setup with customizable parameters
-- Team management for Mobile Legends and Valorant
-- Automatic schedule generation
-- Disruption handling and dynamic rescheduling
-- Visual schedule display with table and timeline views
-- Performance metrics for schedule optimization
+- **Graph Coloring Scheduling**: Initial scheduling using graph coloring algorithms
+- **Genetic Algorithm Optimization**: Dynamic schedule optimization
+- **Real-time Disruption Handling**: Adapt schedules to disruptions during the tournament
 
 ## Installation
 
-1. Clone the repository:
-\`\`\`bash
-git clone https://github.com/yourusername/esports-tournament-scheduler.git
-cd esports-tournament-scheduler
-\`\`\`
+### Prerequisites
+- Python 3.8 or higher
+- Node.js 16.x or higher
+- npm 8.x or higher
 
-2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+### Setup Steps
 
-3. Start the server:
-\`\`\`bash
-npm start
-\`\`\`
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/esports-scheduler.git
+   cd esports-scheduler
+   ```
 
-4. Open your browser and navigate to `http://localhost:3000/scheduler.html`
+2. Install backend dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Install frontend dependencies:
+   ```
+   npm install
+   ```
+
+4. Create necessary directories:
+   ```
+   mkdir -p backend/logs
+   ```
+
+5. Setup environment variables (optional):
+   Create a `.env` file in the root directory with the following variables:
+   ```
+   API_PORT=8000
+   FRONTEND_PORT=3000
+   DEBUG=True
+   ```
+
+6. Initialize the database (if applicable):
+   ```
+   python -m backend.utils.data_importer
+   ```
 
 ## Usage
 
-1. **Tournament Setup**: Configure tournament parameters including format, team counts, match durations, venue hours, and rest periods.
+### Backend
 
-2. **Team Management**: Add teams for Mobile Legends and Valorant.
+Run the backend server:
 
-3. **Schedule Generation**: Generate an initial tournament schedule based on your parameters.
+```
+python -m backend.main
+```
 
-4. **Disruption Handling**: Add disruptions like extended match durations or late team arrivals.
+### Frontend
 
-5. **Schedule Adjustment**: Dynamically adjust the schedule to accommodate disruptions while minimizing conflicts.
+Run the frontend development server from the project root:
+
+```
+npm run dev
+```
+
+### Optimization Testing
+
+Run the optimization test to evaluate algorithm performance:
+
+```
+npm run test:optimization
+```
+
+This will generate a visualization of optimization metrics in `optimization_results.png`.
+
+## Codebase Organization
+
+### Backend Components
+
+- **api/**: Contains API endpoints and server implementations
+  - scheduler_api.py: FastAPI implementation for the scheduler API
+  - server.js: Express server for the frontend
+
+- **models/**: Contains data models and entities
+  - models.py: Core data models for the scheduler
+  - tournament.py: Tournament model and related functionality
+
+- **schedulers/**: Contains scheduling algorithm implementations
+  - scheduler.py: Graph coloring and genetic algorithm implementations
+
+- **tests/**: Contains test files
+  - test_optimization.py: Tests for evaluating optimization performance
+
+- **utils/**: Contains utility functions
+  - data_importer.py: Utilities for importing data
+
+### Frontend Components
+
+- **components/**: React components for the UI
+- **config/**: Frontend configuration files
+  - tailwind.config.ts: Tailwind CSS configuration
+  - postcss.config.mjs: PostCSS configuration
+  - tsconfig.json: TypeScript configuration for the frontend
+  - components.json: UI component configuration
+- **hooks/**: React hooks for state management
+- **pages/**: Next.js page components
+- **public/**: Static assets like images
+- **styles/**: CSS and styling files
+- **utils/**: Frontend utility functions
+
+## Configuration
+
+### Root Directory Files
+
+These files must remain in the root directory for the frameworks to work properly:
+
+- **package.json**: Main project dependencies and scripts - needed by npm
+- **package-lock.json**: Dependency lock file - needed by npm
+- **tsconfig.json**: Root TypeScript configuration - needed by TypeScript compiler
+- **next.config.mjs**: Next.js configuration - needed by Next.js framework
+- **requirements.txt**: Python dependencies - needed by pip
+
+While these configuration files remain in the root directory, they reference the frontend configuration files in their new locations. For example, next.config.mjs references the Tailwind and PostCSS configs in the frontend/config directory.
+
+### Backend Configuration
+
+Backend configuration is managed through the Python modules in their respective directories:
+
+- Scheduling parameters are configured in the `schedulers` modules
+- API endpoints are configured in the `api` modules
+- Data models are defined in the `models` modules
+
+## Optimization Metrics
+
+The scheduling optimization is evaluated using the following metrics:
+
+1. **Conflict Resolution**: Eliminate team and venue conflicts
+2. **Rest Period Compliance**: Ensure minimum rest periods between matches
+3. **Venue Hours Compliance**: Schedule within venue operating hours
+4. **Round Sequencing**: Maintain proper tournament progression
+5. **Idle Time Minimization**: Reduce team waiting times
+6. **Schedule Stability**: Minimize changes during disruptions
 
 ## Technologies Used
 
-- JavaScript (Vanilla)
-- HTML5 & CSS3
-- Node.js
-- Express.js
+- Python 3.8+
+- FastAPI and Flask
+- React.js with Next.js
+- TypeScript
+- NetworkX (graph algorithms)
+- DEAP (genetic algorithms)
+- Tailwind CSS
 
 ## License
 

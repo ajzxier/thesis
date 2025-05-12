@@ -529,54 +529,330 @@ function generateSchedule(tournament, teams) {
   const mlMatchPairs = []
   const valMatchPairs = []
   
-  // Create Mobile Legends match pairs
+  // Create match pairs based on tournament format
   if (tournament.enabledGames.mobileLegends) {
-    for (let i = 0; i < mlTeams.length; i += 2) {
-      if (i + 1 < mlTeams.length) {
-        mlMatchPairs.push({
-          team1: mlTeams[i],
-          team2: mlTeams[i + 1],
-          roundNumber: 1
-        })
-      }
-    }
-    
-    // Add semifinals if enough teams
-    if (mlTeams.length >= 4) {
-      mlMatchPairs.push({
-        team1: { ...mlTeams[0], name: "ML Winner 1" },
-        team2: { ...mlTeams[1], name: "ML Winner 2" },
-        roundNumber: 2,
-        description: "ML Semifinal"
-      })
+    createMatchesBasedOnFormat(mlMatchPairs, mlTeams, "ML", tournament.format);
+  }
+  
+  if (tournament.enabledGames.valorant) {
+    createMatchesBasedOnFormat(valMatchPairs, valTeams, "Val", tournament.format);
+  }
+  
+  // Function to create matches based on tournament format
+  function createMatchesBasedOnFormat(matchPairs, teams, gameType, format) {
+    if (format === "single-elimination") {
+      createSingleEliminationMatches(matchPairs, teams, gameType);
+    } else if (format === "double-elimination") {
+      createDoubleEliminationMatches(matchPairs, teams, gameType);
+    } else {
+      // Fallback to simple bracket if format not supported
+      createSimpleBracket(matchPairs, teams, gameType);
     }
   }
   
-  // Create Valorant match pairs
-  if (tournament.enabledGames.valorant) {
-    for (let i = 0; i < valTeams.length; i += 2) {
-      if (i + 1 < valTeams.length) {
-        valMatchPairs.push({
-          team1: valTeams[i],
-          team2: valTeams[i + 1],
-          roundNumber: 1
-        })
+  // Create single elimination tournament
+  function createSingleEliminationMatches(matchPairs, teams, gameType) {
+    const teamCount = teams.length;
+    
+    if (teamCount < 2) return;
+    
+    // Determine rounds based on team count
+    // For 4 teams: 2 rounds (semifinals, finals)
+    // For 8 teams: 3 rounds (quarterfinals, semifinals, finals)
+    // For 16 teams: 4 rounds (round of 16, quarterfinals, semifinals, finals)
+    // For 32 teams: 5 rounds (round of 32, round of 16, quarterfinals, semifinals, finals)
+    const rounds = Math.log2(teamCount);
+    
+    console.log(`Creating ${gameType} Single Elimination bracket with ${teamCount} teams, ${rounds} rounds`);
+    
+    // First round matches
+    for (let i = 0; i < teamCount; i += 2) {
+      if (i + 1 < teamCount) {
+        matchPairs.push({
+          team1: teams[i],
+          team2: teams[i + 1],
+          roundNumber: 1,
+          bracketType: getRoundNameByTeamCount(teamCount, 1),
+          gameType: gameType
+        });
+      }
+    }
+    
+    // Generate subsequent rounds based on team count
+    if (teamCount >= 4) {
+      // Create additional rounds
+      for (let round = 2; round <= rounds; round++) {
+        const matchesInRound = Math.pow(2, rounds - round);
+        
+        for (let match = 0; match < matchesInRound; match++) {
+          const winnerName1 = `${gameType} R${round-1} W${match*2 + 1}`;
+          const winnerName2 = `${gameType} R${round-1} W${match*2 + 2}`;
+          
+          matchPairs.push({
+            team1: { ...teams[0], name: winnerName1 },
+            team2: { ...teams[0], name: winnerName2 },
+            roundNumber: round,
+            bracketType: getRoundNameByTeamCount(teamCount, round),
+            gameType: gameType
+          });
+        }
+      }
+    }
+  }
+  
+  // Create double elimination tournament
+  function createDoubleEliminationMatches(matchPairs, teams, gameType) {
+    const teamCount = teams.length;
+    
+    if (teamCount < 2) return;
+    
+    // Determine rounds based on team count
+    const upperRounds = Math.log2(teamCount);
+    let totalMatches = 0;
+    
+    console.log(`Creating ${gameType} Double Elimination bracket with ${teamCount} teams, upperRounds: ${upperRounds}`);
+    
+    // Upper bracket first round matches
+    console.log(`Creating ${teamCount/2} Upper Bracket First Round matches`);
+    for (let i = 0; i < teamCount; i += 2) {
+      if (i + 1 < teamCount) {
+        matchPairs.push({
+          team1: teams[i],
+          team2: teams[i + 1],
+          roundNumber: 1,
+          bracketType: "Upper Bracket First Round",
+          gameType: gameType
+        });
+        totalMatches++;
+      }
+    }
+    
+    // Upper bracket subsequent rounds
+    for (let round = 2; round <= upperRounds; round++) {
+      const matchesInRound = Math.pow(2, upperRounds - round);
+      
+      console.log(`Creating ${matchesInRound} Upper Bracket Round ${round} matches`);
+      
+      for (let match = 0; match < matchesInRound; match++) {
+        const winnerName1 = `${gameType} UB R${round-1} W${match*2 + 1}`;
+        const winnerName2 = `${gameType} UB R${round-1} W${match*2 + 2}`;
+        
+        let bracketType;
+        if (round === 2 && upperRounds === 2) { // 4 teams
+          bracketType = "Upper Bracket Finals";
+        } else if (round === 2 && upperRounds === 3) { // 8 teams
+          bracketType = "Upper Bracket Semifinals";
+        } else if (round === 3 && upperRounds === 3) { // 8 teams
+          bracketType = "Upper Bracket Finals";
+        } else if (round === 2 && upperRounds === 4) { // 16 teams
+          bracketType = "Upper Bracket Quarterfinals";
+        } else if (round === 3 && upperRounds === 4) { // 16 teams
+          bracketType = "Upper Bracket Semifinals";
+        } else if (round === 4 && upperRounds === 4) { // 16 teams
+          bracketType = "Upper Bracket Finals";
+        } else {
+          bracketType = `Upper Bracket Round ${round}`;
+        }
+        
+        matchPairs.push({
+          team1: { ...teams[0], name: winnerName1 },
+          team2: { ...teams[0], name: winnerName2 },
+          roundNumber: round,
+          bracketType: bracketType,
+          gameType: gameType
+        });
+        totalMatches++;
+      }
+    }
+    
+    // Lower bracket matches
+    // For 4 teams: 2 lower bracket matches (loser's round 1, lower bracket finals)
+    // For 8 teams: 6 lower bracket matches (2 LR1, 2 LR2, 1 semifinals, 1 LBF)
+    // For 16 teams: 11 lower bracket matches (4 LR1, 4 LR2, 2 LR3, 1 LBF)
+    
+    // First lower bracket round (losers from first upper bracket)
+    let lowerRound1Matches = teamCount / 4; // Default calculation
+    
+    // For 8 teams, we need exactly 2 matches in LR1
+    if (teamCount === 8) {
+      lowerRound1Matches = 2;
+    } else if (teamCount === 16) {
+      lowerRound1Matches = 4;
+    }
+    
+    console.log(`Creating ${lowerRound1Matches} Lower Bracket Losers' Round 1 matches`);
+    for (let i = 0; i < lowerRound1Matches; i++) {
+      matchPairs.push({
+        team1: { ...teams[0], name: `${gameType} UB R1 L${i*2 + 1}` },
+        team2: { ...teams[0], name: `${gameType} UB R1 L${i*2 + 2}` },
+        roundNumber: upperRounds + 1, // Put after upper bracket rounds
+        bracketType: "Lower Bracket Losers' Round 1",
+        gameType: gameType
+      });
+      totalMatches++;
+    }
+    
+    // Initialize lower round 2 matches variable with a default value of 0
+    let lowerRound2Matches = 0;
+    
+    // Additional lower bracket rounds vary by team count
+    if (teamCount >= 8) {
+      // Lower bracket round 2
+      lowerRound2Matches = lowerRound1Matches;
+      
+      // For 8 teams, we need exactly 2 matches in LR2
+      if (teamCount === 8) {
+        lowerRound2Matches = 2;
+      }
+      
+      console.log(`Creating ${lowerRound2Matches} Lower Bracket Losers' Round 2 matches`);
+      for (let i = 0; i < lowerRound2Matches; i++) {
+        matchPairs.push({
+          team1: { ...teams[0], name: `${gameType} LB R1 W${i+1}` },
+          team2: { ...teams[0], name: `${gameType} UB R2 L${i+1}` },
+          roundNumber: upperRounds + 2,
+          bracketType: "Lower Bracket Losers' Round 2",
+          gameType: gameType
+        });
+        totalMatches++;
+      }
+      
+      // For 8 teams, add Loser's Semifinals (match between the two losers' round 2 winners)
+      if (teamCount === 8) {
+        console.log(`Creating Loser's Semifinals match`);
+        matchPairs.push({
+          team1: { ...teams[0], name: `${gameType} LB R2 W1` },
+          team2: { ...teams[0], name: `${gameType} LB R2 W2` },
+          roundNumber: upperRounds + 3,
+          bracketType: "Losers' Semifinals",
+          gameType: gameType
+        });
+        totalMatches++;
+      }
+      
+      // Continue with additional lower bracket rounds for 16+ teams
+      if (teamCount >= 16) {
+        // Lower bracket round 3
+        const lowerRound3Matches = lowerRound2Matches / 2;
+        console.log(`Creating ${lowerRound3Matches} Lower Bracket Losers' Round 3 matches`);
+        for (let i = 0; i < lowerRound3Matches; i++) {
+          matchPairs.push({
+            team1: { ...teams[0], name: `${gameType} LB R2 W${i*2 + 1}` },
+            team2: { ...teams[0], name: `${gameType} LB R2 W${i*2 + 2}` },
+            roundNumber: upperRounds + 3,
+            bracketType: "Lower Bracket Losers' Round 3",
+            gameType: gameType
+          });
+          totalMatches++;
+        }
+      }
+    }
+    
+    // Lower bracket finals
+    console.log('Creating Lower Bracket Finals match');
+    
+    // Determine the correct opponent for Lower Bracket Finals based on team count
+    let lbFinalsOpponent1;
+    if (teamCount === 4) {
+      lbFinalsOpponent1 = `${gameType} LB R1 W1`;
+    } else if (teamCount === 8) {
+      lbFinalsOpponent1 = `${gameType} LB Semifinals W`;
+    } else if (teamCount >= 16) {
+      lbFinalsOpponent1 = `${gameType} LB Last Round W`;
+    }
+    
+    matchPairs.push({
+      team1: { ...teams[0], name: lbFinalsOpponent1 },
+      team2: { ...teams[0], name: `${gameType} UB Finals L` },
+      roundNumber: upperRounds + (teamCount >= 16 ? 4 : (teamCount >= 8 ? 4 : 2)),
+      bracketType: "Lower Bracket Finals",
+      gameType: gameType
+    });
+    totalMatches++;
+    
+    // Grand finals
+    console.log('Creating Grand Finals match');
+    matchPairs.push({
+      team1: { ...teams[0], name: `${gameType} UB Finals W` },
+      team2: { ...teams[0], name: `${gameType} LB Finals W` },
+      roundNumber: upperRounds + (teamCount >= 16 ? 5 : (teamCount >= 8 ? 5 : 3)),
+      bracketType: "Grand Finals",
+      gameType: gameType
+    });
+    totalMatches++;
+    
+    // Verify expected matches
+    let expectedMatches = 0;
+    if (teamCount === 4) {
+      expectedMatches = 6; // 2 upper first round + 1 upper finals + 1 lower round 1 + 1 lower finals + 1 grand finals
+    } else if (teamCount === 8) {
+      expectedMatches = 14; // 4 upper first round + 2 upper semifinals + 1 upper finals + 2 lower round 1 + 2 lower round 2 + 1 losers semifinals + 1 lower finals + 1 grand finals
+    } else if (teamCount === 16) {
+      expectedMatches = 27; // 8 upper bracket + 18 lower bracket + 1 grand finals
+    }
+    
+    console.log(`Created ${totalMatches} matches for ${gameType} Double Elimination, expected: ${expectedMatches}`);
+    if (totalMatches !== expectedMatches) {
+      console.warn(`MISMATCH: Created ${totalMatches} matches but expected ${expectedMatches}`);
+      
+      // For 8 teams, explicitly count each category
+      if (teamCount === 8) {
+        const ub1 = 4; // Always 4 for 8 teams
+        const ub2 = 2; // Always 2 for 8 teams
+        const ub3 = 1; // Always 1 for 8 teams
+        const lb1 = lowerRound1Matches; // Should be 2
+        const lb2 = lowerRound2Matches; // Should be 2
+        const lbSemis = 1; // Should be 1
+        const lbf = 1; // Always 1
+        const gf = 1; // Always 1
+        console.log(`8-team breakdown: UB1(${ub1}) + UB2(${ub2}) + UB3(${ub3}) + LB1(${lb1}) + LB2(${lb2}) + LBSemis(${lbSemis}) + LBF(${lbf}) + GF(${gf}) = ${ub1+ub2+ub3+lb1+lb2+lbSemis+lbf+gf}`);
+      }
+    }
+  }
+  
+  // Simple bracket creation (fallback)
+  function createSimpleBracket(matchPairs, teams, gameType) {
+    for (let i = 0; i < teams.length; i += 2) {
+      if (i + 1 < teams.length) {
+        matchPairs.push({
+          team1: teams[i],
+          team2: teams[i + 1],
+          roundNumber: 1,
+          gameType: gameType
+        });
       }
     }
     
     // Add semifinals if enough teams
-    if (valTeams.length >= 4) {
-      valMatchPairs.push({
-        team1: { ...valTeams[0], name: "Val Winner 1" },
-        team2: { ...valTeams[1], name: "Val Winner 2" },
+    if (teams.length >= 4) {
+      matchPairs.push({
+        team1: { ...teams[0], name: `${gameType} Winner 1` },
+        team2: { ...teams[0], name: `${gameType} Winner 2` },
         roundNumber: 2,
-        description: "Valorant Semifinal"
-      })
+        description: `${gameType} Semifinal`,
+        gameType: gameType
+      });
     }
+  }
+  
+  // Get round name based on team count and round number
+  function getRoundNameByTeamCount(teamCount, round) {
+    const totalRounds = Math.log2(teamCount);
+    const roundsFromFinal = totalRounds - round;
+    
+    if (roundsFromFinal === 0) return "Finals";
+    if (roundsFromFinal === 1) return "Semifinals";
+    if (roundsFromFinal === 2) return "Quarterfinals";
+    if (roundsFromFinal === 3) return "Round of 16";
+    if (roundsFromFinal === 4) return "Round of 32";
+    
+    return `Round ${round}`;
   }
   
   // Generate matches using time slot preferences
   function createMatchesForGameType(matchPairs, gameType, preferredTimeSlot, duration) {
+    console.log(`Starting createMatchesForGameType for ${gameType} with ${matchPairs.length} match pairs`);
+    
     // Select the appropriate time slots based on preference
     let timeSlots;
     let slotIndex;
@@ -592,71 +868,143 @@ function generateSchedule(tournament, teams) {
       slotIndex = usedWholeDaySlots;
     }
     
+    // Create dynamic number of time slots if needed
+    if (matchPairs.length > (timeSlots ? timeSlots.length : 0)) {
+      console.log(`Need more time slots: ${matchPairs.length} matches but only ${timeSlots ? timeSlots.length : 0} slots`);
+      
+      // Create more slots dynamically
+      if (preferredTimeSlot === "morning" || preferredTimeSlot === "wholeday") {
+        const extraSlots = matchPairs.length - morningTimeSlots.length;
+        if (extraSlots > 0) {
+          for (let i = 0; i < extraSlots; i++) {
+            const baseTime = morningTimeSlots.length > 0 
+              ? new Date(venueStart.getTime() + (morningTimeSlots.length * 30 * 60000))
+              : new Date(venueStart);
+            const newSlot = {
+              hours: baseTime.getHours(),
+              minutes: baseTime.getMinutes()
+            };
+            morningTimeSlots.push(newSlot);
+            if (preferredTimeSlot === "wholeday") {
+              wholeDayTimeSlots.push(newSlot);
+            }
+          }
+          console.log(`Added ${extraSlots} extra morning slots, total now: ${morningTimeSlots.length}`);
+        }
+      }
+      
+      if (preferredTimeSlot === "afternoon" || preferredTimeSlot === "wholeday") {
+        const extraSlots = matchPairs.length - afternoonTimeSlots.length;
+        if (extraSlots > 0) {
+          for (let i = 0; i < extraSlots; i++) {
+            const baseTime = afternoonTimeSlots.length > 0 
+              ? new Date(midDay.getTime() + (afternoonTimeSlots.length * 30 * 60000))
+              : new Date(midDay);
+            const newSlot = {
+              hours: baseTime.getHours(),
+              minutes: baseTime.getMinutes()
+            };
+            afternoonTimeSlots.push(newSlot);
+            if (preferredTimeSlot === "wholeday") {
+              wholeDayTimeSlots.push(newSlot);
+            }
+          }
+          console.log(`Added ${extraSlots} extra afternoon slots, total now: ${afternoonTimeSlots.length}`);
+        }
+      }
+      
+      // Update the time slots reference
+      if (preferredTimeSlot === "morning") {
+        timeSlots = morningTimeSlots;
+      } else if (preferredTimeSlot === "afternoon") {
+        timeSlots = afternoonTimeSlots;
+      } else if (preferredTimeSlot === "wholeday") {
+        timeSlots = wholeDayTimeSlots;
+      }
+    }
+    
     // Start times for all matches
     let lastEndTime = null;
+    let processedCount = 0;
     
+    // Make sure we process all matches regardless of time slot availability
     for (const matchPair of matchPairs) {
-      if (timeSlots && slotIndex < timeSlots.length) {
-        // Create start time based on previous match or time slot
-        let startTime;
-        
-        if (matches.length === 0 || lastEndTime === null) {
-          // For first match, use the predefined time slot
+      // Create start time based on previous match or time slot
+      let startTime;
+      
+      if (matches.length === 0 || lastEndTime === null) {
+        // For first match, use the predefined time slot or default to venue start
+        if (timeSlots && slotIndex < timeSlots.length) {
           const timeSlot = timeSlots[slotIndex];
           startTime = new Date(venueStart);
           startTime.setHours(timeSlot.hours, timeSlot.minutes, 0, 0);
         } else {
-          // For subsequent matches, use minimum buffer time after previous match
-          startTime = new Date(lastEndTime);
-          startTime.setMinutes(startTime.getMinutes() + 5); // 5-minute minimum buffer
+          startTime = new Date(venueStart);
+          // Add 30 minutes for each match we've already created
+          startTime.setMinutes(startTime.getMinutes() + (processedCount * 30));
         }
-        
-        // Calculate end time
-        const endTime = new Date(startTime);
-        endTime.setMinutes(endTime.getMinutes() + duration);
-        
-        // Create match
-        const match = {
-          id: `M${matches.length + 1}`,
-          team1: matchPair.team1,
-          team2: matchPair.team2,
-          duration: duration,
-          gameType: gameType,
-          roundNumber: matchPair.roundNumber,
-          startTime: startTime,
-          endTime: endTime,
-          description: matchPair.description || ""
-        };
-        
-        matches.push(match);
-        
-        // Update lastEndTime for the next match
-        lastEndTime = new Date(endTime);
-        
-        // Increment the appropriate slot counter
-        if (preferredTimeSlot === "morning") {
-          usedMorningSlots++;
-        } else if (preferredTimeSlot === "afternoon") {
-          usedAfternoonSlots++;
-        } else if (preferredTimeSlot === "wholeday") {
-          usedWholeDaySlots++;
-        }
-        
+      } else {
+        // For subsequent matches, use minimum buffer time after previous match
+        startTime = new Date(lastEndTime);
+        startTime.setMinutes(startTime.getMinutes() + 5); // 5-minute minimum buffer
+      }
+      
+      // Calculate end time
+      const endTime = new Date(startTime);
+      endTime.setMinutes(endTime.getMinutes() + duration);
+      
+      // Create match
+      const match = {
+        id: `M${matches.length + 1}`,
+        team1: matchPair.team1,
+        team2: matchPair.team2,
+        duration: duration,
+        gameType: matchPair.gameType || gameType,
+        roundNumber: matchPair.roundNumber,
+        bracketType: matchPair.bracketType || "",
+        startTime: startTime,
+        endTime: endTime,
+        description: matchPair.description || ""
+      };
+      
+      matches.push(match);
+      processedCount++;
+      
+      // Update lastEndTime for the next match
+      lastEndTime = new Date(endTime);
+      
+      // Increment the appropriate slot counter
+      if (preferredTimeSlot === "morning" && slotIndex < morningTimeSlots.length) {
+        usedMorningSlots++;
+        slotIndex++;
+      } else if (preferredTimeSlot === "afternoon" && slotIndex < afternoonTimeSlots.length) {
+        usedAfternoonSlots++;
+        slotIndex++;
+      } else if (preferredTimeSlot === "wholeday" && slotIndex < wholeDayTimeSlots.length) {
+        usedWholeDaySlots++;
         slotIndex++;
       }
     }
+    
+    console.log(`Created ${processedCount} matches for ${gameType}`);
   }
   
   // Create matches according to preferences
   if (tournament.enabledGames.mobileLegends) {
+    console.log("ML Match Pairs before createMatchesForGameType:", mlMatchPairs.length);
     createMatchesForGameType(mlMatchPairs, "ML", mlTimeSlot, mlMatchDuration);
+    console.log("Final ML matches generated:", matches.filter(m => m.gameType === "ML").length);
   }
   
   if (tournament.enabledGames.valorant) {
+    console.log("Val Match Pairs before createMatchesForGameType:", valMatchPairs.length);
     createMatchesForGameType(valMatchPairs, "Val", valTimeSlot, valMatchDuration);
+    console.log("Final Val matches generated:", matches.filter(m => m.gameType === "Val").length);
   }
   
-  console.log("Generated schedule with dynamic time slots:", matches);
+  console.log("All match pairs created:", mlMatchPairs.length + valMatchPairs.length);
+  console.log("Total matches generated:", matches.length);
+  console.log("Tournament format:", tournament.format);
   return { matches };
 }
 
@@ -1020,6 +1368,14 @@ function removeDisruption(index) {
   // Disable adjust schedule button if no disruptions
   if (state.disruptions.length === 0) {
     adjustScheduleBtn.disabled = true
+    
+    // Reset adjusted schedule if all disruptions are removed
+    state.adjustedSchedule = null;
+    
+    // If we're on the adjusted tab, switch back to disruptions tab
+    if (state.activeTab === "adjusted") {
+      showTab("disruptions");
+    }
   }
 }
 
@@ -1041,10 +1397,13 @@ function handleAdjustSchedule() {
   // Simulate API call delay
   setTimeout(() => {
     try {
-      // Adjust schedule
+      // Reset the adjusted schedule completely before recalculating
+      state.adjustedSchedule = null;
+      
+      // Adjust schedule fresh from the original schedule and current disruptions
       state.adjustedSchedule = adjustSchedule(state.tournament, state.schedule, state.disruptions)
 
-      // Update UI
+      // Update UI with recalculated metrics
       updateAdjustedScheduleDisplay()
 
       // Enable adjusted tab
@@ -1065,7 +1424,9 @@ function handleAdjustSchedule() {
 
 // Adjust schedule (mock implementation)
 function adjustSchedule(tournament, schedule, disruptions) {
-  // Create a deep copy of the schedule
+  console.log("Starting fresh schedule adjustment with", disruptions.length, "disruptions");
+  
+  // Create a deep copy of the original schedule
   const adjustedSchedule = {
     matches: JSON.parse(JSON.stringify(schedule.matches)),
   }
@@ -1145,8 +1506,9 @@ function adjustSchedule(tournament, schedule, disruptions) {
         
         // Extend match duration
         match.duration += disruption.extraMinutes
-        match.endTime = new Date(match.startTime)
-        match.endTime.setMinutes(match.endTime.getMinutes() + match.duration)
+        
+        // Recalculate end time precisely from start time plus duration
+        match.endTime = new Date(match.startTime.getTime() + (match.duration * 60000))
         
         console.log(`Match ${match.id} extended from ${originalEndTime.toLocaleTimeString()} to ${match.endTime.toLocaleTimeString()}`);
         console.log(`This match now runs ${disruption.extraMinutes} minutes longer (${match.duration} total)`);
@@ -1156,22 +1518,23 @@ function adjustSchedule(tournament, schedule, disruptions) {
         const originalEndTime = new Date(match.endTime);
         
         // Delay match start time
-        match.startTime = new Date(match.startTime)
-        match.startTime.setMinutes(match.startTime.getMinutes() + disruption.extraMinutes)
-        match.endTime = new Date(match.startTime)
-        match.endTime.setMinutes(match.endTime.getMinutes() + match.duration)
+        match.startTime = new Date(originalStartTime.getTime() + (disruption.extraMinutes * 60000))
+        
+        // Recalculate end time precisely from new start time plus duration
+        match.endTime = new Date(match.startTime.getTime() + (match.duration * 60000))
         
         console.log(`Match ${match.id} delayed from ${originalStartTime.toLocaleTimeString()} to ${match.startTime.toLocaleTimeString()}`);
         console.log(`This results in end time changing from ${originalEndTime.toLocaleTimeString()} to ${match.endTime.toLocaleTimeString()}`);
       } else if (disruption.type === "early_finish") {
         // Save original end time
         const originalEndTime = new Date(match.endTime);
+        const originalDuration = match.duration;
         
         // Reduce match duration (finished earlier than expected)
-        match.duration -= disruption.extraMinutes
-        if (match.duration < 10) match.duration = 10 // minimum duration
-        match.endTime = new Date(match.startTime)
-        match.endTime.setMinutes(match.endTime.getMinutes() + match.duration)
+        match.duration = Math.max(9, originalDuration - disruption.extraMinutes);
+        
+        // Recalculate end time precisely from start time plus new duration
+        match.endTime = new Date(match.startTime.getTime() + (match.duration * 60000))
         
         console.log(`Match ${match.id} finished early at ${match.endTime.toLocaleTimeString()} instead of ${originalEndTime.toLocaleTimeString()}`);
         console.log(`This match is now ${disruption.extraMinutes} minutes shorter (${match.duration} total)`);
@@ -1183,7 +1546,7 @@ function adjustSchedule(tournament, schedule, disruptions) {
     }
   }
 
-  // First adjust teams with disruptions (late arrivals)
+  // First adjust teams with disruptions
   // Sort matches by start time (original schedule order)
   adjustedSchedule.matches.sort((a, b) => a.originalStartTime - b.originalStartTime)
 
@@ -1202,9 +1565,8 @@ function adjustSchedule(tournament, schedule, disruptions) {
     // Calculate required buffer time
     const bufferMinutes = teamsOverlap ? tournament.restPeriod : 5; // 5 min minimum buffer if no team overlap
     
-    // Calculate minimum start time
-    const minStartTime = new Date(currentMatch.endTime);
-    minStartTime.setMinutes(minStartTime.getMinutes() + bufferMinutes);
+    // Calculate minimum start time precisely
+    const minStartTime = new Date(currentMatch.endTime.getTime() + (bufferMinutes * 60000));
     
     console.log(`Match ${nextMatch.id} current start: ${nextMatch.startTime.toLocaleTimeString()}, min start: ${minStartTime.toLocaleTimeString()}`);
     
@@ -1213,10 +1575,10 @@ function adjustSchedule(tournament, schedule, disruptions) {
       // Slide the match as early as possible (use minStartTime)
       const newStartTime = new Date(minStartTime);
       console.log(`Moving match ${nextMatch.id} from ${nextMatch.startTime.toLocaleTimeString()} to ${newStartTime.toLocaleTimeString()}`);
-      // Update match times
+      
+      // Update match times precisely using milliseconds
       nextMatch.startTime = newStartTime;
-      nextMatch.endTime = new Date(newStartTime);
-      nextMatch.endTime.setMinutes(nextMatch.startTime.getMinutes() + nextMatch.duration);
+      nextMatch.endTime = new Date(newStartTime.getTime() + (nextMatch.duration * 60000));
     }
     // Handle early finish - try to move match earlier if possible
     else if (currentMatch.finishedEarly) {
@@ -1227,10 +1589,9 @@ function adjustSchedule(tournament, schedule, disruptions) {
         
         console.log(`Due to early finish, moving match ${nextMatch.id} earlier from ${nextMatch.startTime.toLocaleTimeString()} to ${newStartTime.toLocaleTimeString()}`);
         
-        // Update match times
+        // Update match times precisely using milliseconds
         nextMatch.startTime = newStartTime;
-        nextMatch.endTime = new Date(newStartTime);
-        nextMatch.endTime.setMinutes(nextMatch.startTime.getMinutes() + nextMatch.duration);
+        nextMatch.endTime = new Date(newStartTime.getTime() + (nextMatch.duration * 60000));
       }
     }
   }
@@ -1257,16 +1618,30 @@ function adjustSchedule(tournament, schedule, disruptions) {
 
 // Update adjusted schedule display
 function updateAdjustedScheduleDisplay() {
-  if (!state.adjustedSchedule) {
-    noAdjustedScheduleMessage.style.display = "block"
-    adjustedScheduleContainer.style.display = "none"
-    document.getElementById("metrics-container").style.display = "none"
-    return
+  // Check if the required DOM elements exist
+  if (!adjustedScheduleContainer || !noAdjustedScheduleMessage || !adjustedTableView || !adjustedTimelineView) {
+    console.error("Required DOM elements for adjusted schedule display are missing");
+    return;
   }
 
-  noAdjustedScheduleMessage.style.display = "none"
-  adjustedScheduleContainer.style.display = "block"
-  document.getElementById("metrics-container").style.display = "grid"
+  // Check if adjusted schedule exists
+  if (!state.adjustedSchedule) {
+    noAdjustedScheduleMessage.style.display = "block";
+    adjustedScheduleContainer.style.display = "none";
+    const metricsContainer = document.getElementById("metrics-container");
+    if (metricsContainer) {
+      metricsContainer.style.display = "none";
+    }
+    return;
+  }
+
+  noAdjustedScheduleMessage.style.display = "none";
+  adjustedScheduleContainer.style.display = "block";
+  
+  const metricsContainer = document.getElementById("metrics-container");
+  if (metricsContainer) {
+    metricsContainer.style.display = "grid";
+  }
 
   // Group matches by game type, round, and bracket
   const groupedMatches = {};
@@ -1458,25 +1833,50 @@ function updateAdjustedScheduleDisplay() {
 
 // Update adjusted view based on selected view
 function updateAdjustedView() {
-  adjustedViewButtons.forEach((button) => {
-    if (button.dataset.view === state.adjustedView) {
-      button.classList.add("active")
-    } else {
-      button.classList.remove("active")
-    }
-  })
+  // First check if the buttons exist
+  if (adjustedViewButtons) {
+    adjustedViewButtons.forEach((button) => {
+      if (button.dataset.view === state.adjustedView) {
+        button.classList.add("active")
+      } else {
+        button.classList.remove("active")
+      }
+    })
+  }
 
-  if (state.adjustedView === "table") {
-    adjustedTableView.classList.add("active")
-    adjustedTimelineView.classList.remove("active")
-  } else {
-    adjustedTableView.classList.remove("active")
-    adjustedTimelineView.classList.add("active")
+  // Check if the views exist before accessing classList
+  if (adjustedTableView && adjustedTimelineView) {
+    if (state.adjustedView === "table") {
+      adjustedTableView.classList.add("active")
+      adjustedTimelineView.classList.remove("active")
+    } else {
+      adjustedTableView.classList.remove("active")
+      adjustedTimelineView.classList.add("active")
+    }
   }
 }
 
 // Update metrics
 function updateMetrics() {
+  console.log("Updating metrics with current state:", { 
+    hasSchedule: !!state.schedule, 
+    hasAdjustedSchedule: !!state.adjustedSchedule, 
+    disruptionCount: state.disruptions.length 
+  });
+
+  // Check if required DOM elements exist
+  if (!originalIdleTime || !adjustedIdleTime || !idleTimeDiff || 
+      !disruptionScore || !originalDuration || !adjustedDuration || !durationDiff) {
+    console.error("Required metric DOM elements are missing");
+    return;
+  }
+
+  // Check if both schedule and adjustedSchedule exist
+  if (!state.schedule || !state.adjustedSchedule) {
+    console.error("Schedule or adjusted schedule is missing for metrics calculation");
+    return;
+  }
+
   // Calculate idle time
   const originalIdleTimeValue = calculateIdleTime(state.schedule)
   const adjustedIdleTimeValue = calculateIdleTime(state.adjustedSchedule)
@@ -1484,16 +1884,36 @@ function updateMetrics() {
 
   originalIdleTime.textContent = `${originalIdleTimeValue} min`
   adjustedIdleTime.textContent = `${adjustedIdleTimeValue} min`
-  idleTimeDiff.textContent = `${Math.abs(idleTimeDiffValue)} min`
 
-  if (idleTimeDiffValue < 0) {
-    idleTimeDiff.parentElement.classList.add("improvement")
-    idleTimeDiff.parentElement.classList.remove("warning")
-    idleTimeDiff.parentElement.textContent = `Improvement: ${Math.abs(idleTimeDiffValue)} min`
-  } else {
-    idleTimeDiff.parentElement.classList.remove("improvement")
-    idleTimeDiff.parentElement.classList.add("warning")
-    idleTimeDiff.parentElement.textContent = `Increase: ${idleTimeDiffValue} min`
+  console.log(`Metrics calculation:
+    Original idle time: ${originalIdleTimeValue} min
+    Adjusted idle time: ${adjustedIdleTimeValue} min
+    Difference: ${idleTimeDiffValue} min (${idleTimeDiffValue < 0 ? 'Decreased' : 'Increased'})
+  `)
+
+  const idleTimeParent = idleTimeDiff.parentElement;
+  if (idleTimeParent) {
+    // Clear existing text first to avoid stale content
+    while (idleTimeParent.firstChild) {
+      idleTimeParent.removeChild(idleTimeParent.firstChild);
+    }
+    
+    if (idleTimeDiffValue < 0) {
+      // Idle time decreased (improvement)
+      idleTimeParent.classList.add("improvement")
+      idleTimeParent.classList.remove("warning")
+      idleTimeParent.textContent = `Decreased by: ${Math.abs(idleTimeDiffValue)} min`
+    } else if (idleTimeDiffValue > 0) {
+      // Idle time increased (warning)
+      idleTimeParent.classList.remove("improvement")
+      idleTimeParent.classList.add("warning")
+      idleTimeParent.textContent = `Increased by: ${idleTimeDiffValue} min`
+    } else {
+      // No change in idle time
+      idleTimeParent.classList.remove("improvement")
+      idleTimeParent.classList.remove("warning")
+      idleTimeParent.textContent = `No change`
+    }
   }
 
   // Calculate disruption score
@@ -1505,45 +1925,127 @@ function updateMetrics() {
   const adjustedDurationValue = calculateTotalDuration(state.adjustedSchedule)
   const durationDiffValue = adjustedDurationValue - originalDurationValue
 
+  // Debugging output to validate exact difference
+  console.log(`Exact duration calculation:
+    Original duration in minutes: ${originalDurationValue}
+    Adjusted duration in minutes: ${adjustedDurationValue}
+    Raw difference: ${durationDiffValue}
+  `)
+
   originalDuration.textContent = formatDuration(originalDurationValue)
   adjustedDuration.textContent = formatDuration(adjustedDurationValue)
-  durationDiff.textContent = `${Math.abs(durationDiffValue)} min`
 
-  if (durationDiffValue < 0) {
-    durationDiff.parentElement.classList.add("improvement")
-    durationDiff.parentElement.classList.remove("warning")
-    durationDiff.parentElement.textContent = `Improvement: ${Math.abs(durationDiffValue)} min`
-  } else {
-    durationDiff.parentElement.classList.remove("improvement")
-    durationDiff.parentElement.classList.add("warning")
-    durationDiff.parentElement.textContent = `Increase: ${durationDiffValue} min`
+  const durationParent = durationDiff.parentElement;
+  if (durationParent) {
+    // Clear existing text first to avoid stale content
+    while (durationParent.firstChild) {
+      durationParent.removeChild(durationParent.firstChild);
+    }
+    
+    if (durationDiffValue < 0) {
+      // Duration decreased (improvement)
+      durationParent.classList.add("improvement")
+      durationParent.classList.remove("warning")
+      durationParent.textContent = `Shortened by: ${Math.abs(durationDiffValue)} min`
+    } else if (durationDiffValue > 0) {
+      // Duration increased (warning)
+      durationParent.classList.remove("improvement")
+      durationParent.classList.add("warning")
+      durationParent.textContent = `Increased by: ${durationDiffValue} min`
+    } else {
+      // No change in duration
+      durationParent.classList.remove("improvement")
+      durationParent.classList.remove("warning")
+      durationParent.textContent = `No change`
+    }
   }
 }
 
 // Calculate idle time in minutes
 function calculateIdleTime(schedule) {
-  const sortedMatches = [...schedule.matches].sort((a, b) => a.startTime - b.startTime)
+  if (!schedule || !schedule.matches || schedule.matches.length === 0) {
+    console.error("Invalid schedule or empty matches for idle time calculation")
+    return 0
+  }
+
+  // Sort by start time so we have chronological order
+  const sortedMatches = [...schedule.matches].sort((a, b) => {
+    // Ensure we're working with Date objects
+    const aStart = a.startTime instanceof Date ? a.startTime : new Date(a.startTime)
+    const bStart = b.startTime instanceof Date ? b.startTime : new Date(b.startTime)
+    return aStart - bStart
+  })
+
   let totalIdle = 0
+  let idleBreakdown = []
 
   for (let i = 1; i < sortedMatches.length; i++) {
-    const currentStart = sortedMatches[i].startTime
-    const prevEnd = sortedMatches[i - 1].endTime
+    // Ensure we're working with Date objects
+    const currentStart = sortedMatches[i].startTime instanceof Date ? 
+                        sortedMatches[i].startTime : 
+                        new Date(sortedMatches[i].startTime)
+    
+    const prevEnd = sortedMatches[i - 1].endTime instanceof Date ? 
+                   sortedMatches[i - 1].endTime : 
+                   new Date(sortedMatches[i - 1].endTime)
+    
     if (currentStart > prevEnd) {
       const idleMinutes = Math.floor((currentStart - prevEnd) / 60000)
       totalIdle += idleMinutes
+      
+      // Track individual idle periods for debugging
+      idleBreakdown.push({
+        between: `${sortedMatches[i-1].id} and ${sortedMatches[i].id}`,
+        minutes: idleMinutes,
+        prevEnd: formatTime(prevEnd),
+        currentStart: formatTime(currentStart),
+        rawMs: currentStart - prevEnd
+      })
     }
   }
+
+  console.log(`Idle time calculation:
+    Total idle time: ${totalIdle} minutes
+    Breakdown:`, idleBreakdown)
 
   return totalIdle
 }
 
 // Calculate total duration in minutes
 function calculateTotalDuration(schedule) {
-  const sortedMatches = [...schedule.matches].sort((a, b) => a.startTime - b.startTime)
+  if (!schedule || !schedule.matches || schedule.matches.length === 0) {
+    console.error("Invalid schedule or empty matches for duration calculation")
+    return 0
+  }
+
+  // Sort by start time so we have chronological order
+  const sortedMatches = [...schedule.matches].sort((a, b) => {
+    // Ensure we're working with Date objects
+    const aStart = a.startTime instanceof Date ? a.startTime : new Date(a.startTime)
+    const bStart = b.startTime instanceof Date ? b.startTime : new Date(b.startTime)
+    return aStart - bStart
+  })
+
+  // Get first and last match
   const firstMatch = sortedMatches[0]
   const lastMatch = sortedMatches[sortedMatches.length - 1]
 
-  return Math.floor((lastMatch.endTime - firstMatch.startTime) / 60000)
+  // Get start time of first match and end time of last match, ensuring they're Date objects
+  const startTime = firstMatch.startTime instanceof Date ? firstMatch.startTime : new Date(firstMatch.startTime)
+  const endTime = lastMatch.endTime instanceof Date ? lastMatch.endTime : new Date(lastMatch.endTime)
+
+  // Calculate duration in milliseconds, then convert to minutes
+  const durationMs = endTime - startTime
+  const durationInMinutes = Math.floor(durationMs / 60000)
+
+  console.log(`Total duration calculation:
+    First match: ${firstMatch.id} starts at ${formatTime(startTime)}
+    Last match: ${lastMatch.id} ends at ${formatTime(endTime)}
+    Duration: ${durationInMinutes} minutes (${formatDuration(durationInMinutes)})
+    Raw ms difference: ${durationMs}
+  `)
+  
+  return durationInMinutes
 }
 
 // Format duration in hours and minutes
