@@ -7,7 +7,8 @@ import json
 from datetime import datetime, timedelta
 from typing import List, Dict, Tuple
 
-from models import Team, Match, GameType, Schedule
+from backend.models import Team, Match, Schedule
+from backend.models.models import GameType
 
 def import_teams_from_csv(filepath: str) -> List[Team]:
     """Import team data from a CSV file."""
@@ -117,3 +118,14 @@ def export_schedule_to_csv(schedule: Schedule, filepath: str):
                 match.end_time.strftime('%Y-%m-%d %H:%M:%S') if match.end_time else '',
                 match.duration
             ])
+
+def import_data(teams_file: str = None, matches_file: str = None, disruptions_file: str = None):
+    """
+    Wrapper for import_tournament_data function for backward compatibility.
+    Import data from provided files.
+    """
+    if teams_file and matches_file:
+        return import_tournament_data(teams_file, matches_file, disruptions_file)
+    else:
+        # Return empty data if files not provided
+        return [], Schedule(), []

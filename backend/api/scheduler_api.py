@@ -8,7 +8,7 @@ import re
 from backend.models.models import Match, Team, Schedule, Disruption, GameType
 from backend.models.tournament import Tournament
 from backend.schedulers.scheduler import GraphColoringScheduler, GeneticAlgorithmOptimizer
-from backend.utils.data_importer import import_data  # If this is used
+from backend.utils.data_importer import import_data
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, 

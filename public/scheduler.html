@@ -59,7 +59,7 @@
                                             <label class="switch-label">
                                                 <span>Mobile Legends</span>
                                                 <label class="switch">
-                                                    <input type="checkbox" id="enableMobileLegends" name="enableMobileLegends" checked>
+                                                    <input type="checkbox" id="enableMobileLegends" name="enableMobileLegends" checked title="Enable Mobile Legends tournament">
                                                     <span class="slider round"></span>
                                                 </label>
                                                 <small>Enable Mobile Legends tournament</small>
@@ -70,7 +70,7 @@
                                             <label class="switch-label">
                                                 <span>Valorant</span>
                                                 <label class="switch">
-                                                    <input type="checkbox" id="enableValorant" name="enableValorant" checked>
+                                                    <input type="checkbox" id="enableValorant" name="enableValorant" checked title="Enable Valorant tournament">
                                                     <span class="slider round"></span>
                                                 </label>
                                                 <small>Enable Valorant tournament</small>
@@ -114,6 +114,18 @@
 
                                     <div class="form-row">
                                         <div class="form-group">
+                                            <label for="venueStart">Venue Start Time</label>
+                                            <input type="time" id="venueStart" name="venueStart" value="09:00" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="venueEnd">Venue End Time</label>
+                                            <input type="time" id="venueEnd" name="venueEnd" value="20:00" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
                                             <label for="mlDurationMin">ML Min Duration (min)</label>
                                             <input type="number" id="mlDurationMin" name="mlDurationMin" value="15" min="5" max="60" required>
                                         </div>
@@ -136,17 +148,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="venueStart">Venue Start Time</label>
-                                            <input type="time" id="venueStart" name="venueStart" value="09:00" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="venueEnd">Venue End Time</label>
-                                            <input type="time" id="venueEnd" name="venueEnd" value="20:00" required>
-                                        </div>
-                                    </div>
 
                                     <div class="form-group">
                                         <label for="restPeriod">Rest Period (minutes)</label>

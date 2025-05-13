@@ -4,4 +4,4 @@ API Package
 Contains API endpoints for the esports tournament scheduler.
 """
 
-from .scheduler_api import app, router  # Assuming these exist in scheduler_api.py 
+from .scheduler_api import app  # Only import app since router doesn't exist 

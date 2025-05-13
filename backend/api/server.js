@@ -11,12 +11,17 @@ const PYTHON_API_URL = process.env.PYTHON_API_URL || "http://localhost:5000"
 // Middleware
 app.use(bodyParser.json())
 
-// Serve static files
-app.use(express.static(path.join(__dirname, "public")))
+// Serve static files from the root public directory instead of backend/api/public
+app.use(express.static(path.join(__dirname, "../../public")))
 
 // Serve scheduler.html as default for the root path
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'scheduler.html'))
+  res.sendFile(path.join(__dirname, '../../public', 'scheduler.html'))
+})
+
+// Add direct route for /scheduler.html to handle direct access
+app.get('/scheduler.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public', 'scheduler.html'))
 })
 
 // Tournament data store (in-memory for demo)
